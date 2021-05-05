@@ -39,28 +39,38 @@ class ShiftsViewModel {
     }
     
     func loadMoreData(isReload: Bool = false) {
-        var date = (shifts.value.last?.date ?? Date())
+        var date : Date
         if (isReload){
             date = Date()
-        }else{
+        }else if let previousDate = shifts.value.last?.date {
+            date = previousDate
             date.changeDays(by: 1)
+        }else{
+            date = Date()
         }
         guard let provider = provider else {
             self.error.accept(TemperError(unexpected: true))
             return
         }
         if let lastRequestedDate = self.lastRequestedDate {
-            guard date.compare(lastRequestedDate) == .orderedDescending else {return}
+            guard date.compare(lastRequestedDate) == .orderedDescending || isReload else {return}
         }
         lastRequestedDate = date
         let refreshTime = self.lastRefreshTime
+        if isReload {
+            print("called for refresh")
+        }
         provider.fetchShifts(date: date).asDriver(onErrorJustReturn: .failure(TemperError(unexpected: true))).drive(onNext: { (result) in
-            guard refreshTime.distance(to: self.lastRefreshTime).isEqual(to: 0) else {return} //previous page loadings should be ignored after pull to refresh
+            guard refreshTime.distance(to: self.lastRefreshTime).isEqual(to: 0) else {
+                print("--- recurring refersh: aborted")
+                return
+            } //previous page loadings should be ignored after pull to refresh
             switch result {
                 case .success(let model):
                     let data = model.items
                     let newModel = ShiftsModel(data: data,date: date)
                     var items = isReload ? [] : self.shifts.value
+                    print("response is \(model) items count \(items.count) isReload \(isReload)")
                     items.append(newModel)
                     self.shifts.accept(items)
                     guard newModel.items.count > 0 else {
@@ -109,6 +119,7 @@ class ShiftsViewModel {
     
     func refreshList(){
         //self.shifts.accept([])
+        print("called for refresh")
         self.lastRefreshTime = Date()
         loadMoreData(isReload: true)
     }

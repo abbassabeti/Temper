@@ -15,3 +15,7 @@ end
 target 'Temper' do
   shared_pods
 end
+
+target 'TemperTests' do
+  shared_pods
+end

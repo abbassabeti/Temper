@@ -3,27 +3,25 @@
 This is a take-home challenge written by Abbas SabetiNezhad. To Find out more, read on.
 
 
-![screenshot1](https://github.com/abbassabeti/Bitpanda-Test/blob/images/images/scr01.PNG " ") ![screenshot2](https://github.com/abbassabeti/Bitpanda-Test/blob/images/images/scr02.PNG " ") ![screenshot3](https://github.com/abbassabeti/Bitpanda-Test/blob/images/images/scr03.PNG " ")
-
-![screenshot4](https://github.com/abbassabeti/Bitpanda-Test/blob/images/images/scr04.PNG " ") ![screenshot5](https://github.com/abbassabeti/Bitpanda-Test/blob/images/images/scr05.PNG " ") ![screenshot6](https://github.com/abbassabeti/Bitpanda-Test/blob/images/images/scr06.PNG " ")
+![screenshot1](https://github.com/abbassabeti/Temper/blob/images/images/scr01.PNG " ") ![screenshot2](https://github.com/abbassabeti/Temper/blob/images/images/scr02.PNG " ") 
 
 ## Depedencies
 
 This App uses:
 
-- [RxSwift](https://github.com/uias/Tabman), [RxCocoa](https://github.com/uias/Tabman), [RxGesture](https://github.com/uias/Tabman) : for communicating among Services, Coordinators, ViewModels and ViewControllers
+- [RxSwift](https://github.com/ReactiveX/RxSwift), [RxCocoa](https://github.com/ReactiveX/RxSwift), [RxRelay](https://github.com/JakeWharton/RxRelay): for communicating among Services, Coordinators, ViewModels and ViewControllers
 
-- [RxGesture](https://github.com/kciter/Floaty) : a concise way of connecting gestures to Rx Elements
+- [RxDataSources](https://github.com/RxSwiftCommunity/RxDataSources): An Rx wrapper for UITableView and UICollectionView DataSource and Delegate, including facilities for Differentiable Data Source for optimizing TableView rendering.
 
-- [Moya](https://github.com/kciter/Floaty) : a cleaner approach on defining your network requests
+- [RxGesture](https://github.com/RxSwiftCommunity/RxGesture) : a concise way of connecting gestures to Rx Elements
+
+- [Moya](https://github.com/Moya/Moya) : a cleaner approach on defining your network requests
 
 - [Kingfisher](https://github.com/onevcat/Kingfisher) : for loading images from urls
 
-- [SnapKit](https://github.com/pocketsvg/PocketSVG) : a clean way of defining constraints in your code
+- [SnapKit](https://github.com/SnapKit/SnapKit) : a clean way of defining constraints in your code
 
-- [CodableWrappers](https://github.com/pocketsvg/PocketSVG) : an amazing way of cleaning your model definitions using property wrappers for encode/decode data
-
-- [Toast-Swift](https://github.com/pocketsvg/PocketSVG) : a handy tool for showing info on the screen as a short notice
+- [CodableWrappers](https://github.com/GottaGetSwifty/CodableWrappers) : an amazing way of cleaning your model definitions using property wrappers for encode/decode data
         
 To find out more about how to run the app, see Installation instructions below.
 
@@ -37,7 +35,7 @@ pod install
 
 And Finally, run the app. As it can be seen from the above screenshots, there is a single tableview with support for pull-to-refresh and Diffable dataSource in the app.
 
-I also have written some UnitTests for the logic parts of the app which is available under a sub project, named BitPandaUnitTests in the main project.
+I also have written some UnitTests for the logic parts of the app which is available under a sub project, named TemperTests in the main project.
 
 ## Author
 

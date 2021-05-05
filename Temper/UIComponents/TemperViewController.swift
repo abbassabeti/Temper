@@ -15,8 +15,8 @@ class TemperViewController : UIViewController {
     
     func configOverlayView(action : @escaping (String)->()){
         let buttons : [StackButtonItemModel] = [
-            .init(icon: .init(named: "marker"), name: "Kaart", action: action),
-            .init(icon: .init(named: "filter"), name: "Filters", action: action)
+            .init(icon: .init(named: "filter"), name: "Filters", action: action),
+            .init(icon: .init(named: "marker"), name: "Kaart", action: action)
         ]
         let overlayButtons = StackButtons(hasDelimitter: true, isOverlay: true)
         self.view.addSubview(overlayButtons)

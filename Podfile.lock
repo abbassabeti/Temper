@@ -8,7 +8,6 @@ PODS:
   - Moya/RxSwift (14.0.0-beta.2):
     - Moya/Core
     - RxSwift (~> 5.0)
-  - PaginatedTableView (1.0.1)
   - RxCocoa (5.0.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -17,6 +16,9 @@ PODS:
     - RxCocoa (~> 5.0)
     - RxSwift (~> 5.0)
   - RxGesture (3.0.1):
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - RxMKMapView (5.0.0):
     - RxCocoa (~> 5.0)
     - RxSwift (~> 5.0)
   - RxRelay (5.1.1):
@@ -29,10 +31,10 @@ DEPENDENCIES:
   - CodableWrappers (from `https://github.com/GottaGetSwifty/CodableWrappers.git`, tag `2.0.2`)
   - Kingfisher
   - Moya/RxSwift (= 14.0.0-beta.2)
-  - PaginatedTableView
   - RxCocoa (~> 5.0.0)
   - RxDataSources
   - RxGesture
+  - RxMKMapView
   - SnapKit
   - Toast-Swift (~> 5.0.1)
 
@@ -42,10 +44,10 @@ SPEC REPOS:
     - Differentiator
     - Kingfisher
     - Moya
-    - PaginatedTableView
     - RxCocoa
     - RxDataSources
     - RxGesture
+    - RxMKMapView
     - RxRelay
     - RxSwift
     - SnapKit
@@ -67,15 +69,15 @@ SPEC CHECKSUMS:
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   Kingfisher: f5d8d60a0ef3edd642fd781bae60918599901aff
   Moya: 788e592b92fadb10e30d350ed1a9f75c91eb1368
-  PaginatedTableView: 294d9831d5ddf5c0dcfbb4a281d4fcfb8d12f55a
   RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxGesture: a3f8dd6adf078110ed5e1c9c30d09d705a09852e
+  RxMKMapView: 7b19fc545887314851ea67b12193bc8c6004dcb5
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 1e2e1f9570186967f617e49128ed26ccf1bafc8e
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 43f357d92b5fa5ebc4b2465bdf5b497031ac8439
+PODFILE CHECKSUM: f8a02dc673411fa970040c7066f7dcccd3831ea0
 
 COCOAPODS: 1.10.1

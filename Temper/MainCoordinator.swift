@@ -39,6 +39,11 @@ class MainCoordinator : NSObject {
         return viewModel
     }
     
+    func provideMapViewModel(shifts: [ShiftsModel]) -> MapViewModel {
+        let items = shifts.flatMap({$0.items}).map({MarkerItem(from: $0)}).compactMap({$0})
+        return MapViewModel(markers: items,location: self.locationStatus)
+    }
+    
     func provideShiftsViewController () -> ShiftsViewController {
         let shiftsVC = ShiftsViewController()
         shiftsVC.coordinator = self
@@ -54,8 +59,17 @@ class MainCoordinator : NSObject {
         return navVC
     }
     
-    func openDummyVC(_ title: String) {
-        let vc = UIViewController()
+    func openDummyVC(source: TemperViewController,_ title: String) {
+        var vc: UIViewController
+        switch title {
+            case "Kaart":
+                let mapVC = MapViewController()
+                let shiftsModel = (source as? ShiftsViewController)?.viewModel?.shifts.value ?? []
+                mapVC.viewModel = provideMapViewModel(shifts: shiftsModel)
+                vc = mapVC
+            default:
+                vc = UIViewController()
+        }
         vc.title = title
         vc.view.backgroundColor = .white
         self.navigationController?.pushViewController(vc, animated: true)

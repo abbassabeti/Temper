@@ -7,6 +7,7 @@
 
 import Foundation
 import RxDataSources
+import CoreLocation
 
 // MARK: - ShiftItem
 struct ShiftItem: Codable, IdentifiableType {
@@ -105,6 +106,10 @@ struct ShiftItem: Codable, IdentifiableType {
     
     func getWage() -> String? {
         return self.earningsPerHour?.getWage()
+    }
+    
+    func getLocation() -> CLLocation? {
+        return self.job?.reportAtAddress?.geo.getLocation()
     }
 }
 

@@ -24,6 +24,12 @@ class ShiftsViewController : TemperViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.isHidden = false
     }
     
     func setupView(){
@@ -33,10 +39,8 @@ class ShiftsViewController : TemperViewController {
         
         configTableView()
         
-        if let dummyVCAction = self.coordinator?.openDummyVC {
-            self.configOverlayView(action: dummyVCAction)
-            self.configBottomView(action: dummyVCAction)
-        }
+        self.configOverlayView(action: self.openDummyVC)
+        self.configBottomView(action: self.openDummyVC)
 
         self.viewModel?.shifts.subscribe(onNext: {[weak self] _ in
             guard let self = self else {return}
@@ -52,6 +56,10 @@ class ShiftsViewController : TemperViewController {
             guard let self = self, let value = value else {return}
             self.toast(value)
         }).disposed(by: disposeBag)
+    }
+    
+    func openDummyVC(_ title: String){
+        coordinator?.openDummyVC(source: self, title)
     }
     
     func reloadTableView(){
