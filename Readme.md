@@ -3,7 +3,8 @@
 This is a take-home challenge written by Abbas SabetiNezhad. To Find out more, read on.
 
 
-![screenshot1](https://github.com/abbassabeti/Temper/blob/images/images/scr01.PNG " ") ![screenshot2](https://github.com/abbassabeti/Temper/blob/images/images/scr02.PNG " ") 
+![screenshot1](https://github.com/abbassabeti/Temper/blob/images/images/SCR01.PNG " ") ![screenshot2](https://github.com/abbassabeti/Temper/blob/images/images/SCR02.PNG " ") 
+![screenshot3](https://github.com/abbassabeti/Temper/blob/images/images/SCR03.PNG " ")
 
 ## Depedencies
 
